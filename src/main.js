@@ -1,3 +1,3 @@
-var App = console.log("dasd");
+var App = console.log("dasdasdasdas");
 
 module.export = App;
