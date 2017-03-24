@@ -6,7 +6,8 @@ var open = require('gulp-open');  // Open a URL in a web browser
 var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify'); // Transforms Reat JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
-var concat = reqire('gulp-concat');  // Concatenates files
+var concat = require('gulp-concat');  // Concatenates files
+var lint = require('gulp-concat');  // Concatenates files
 
 var config = {
 	port: 9005,
@@ -65,4 +66,4 @@ gulp.task('watch', function(){
 })
 
 
-gulp.task('default', ['html', 'js', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'open', 'watch']);
