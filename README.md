@@ -1,1 +1,1 @@
-"# react-flux-starter-kit" 
+# react-flux-starter-kit
