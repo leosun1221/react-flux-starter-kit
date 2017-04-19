@@ -22,7 +22,7 @@ var config = {
 		dist: './dist',
 		mainJs: './src/main.js'
 	}
-}
+};
 
 gulp.task('connect', function(){
 	connect.server({
@@ -58,12 +58,18 @@ gulp.task('css', function(){
 	gulp.src(config.paths.css)
 		.pipe(concat('bundle.css'))
 		.pipe(gulp.dest(config.paths.dist + '/css'));
-})
+});
+
+gulp.task('lint', function(){
+	return gulp.src(config.paths.js)
+		.pipe(eslint({config: 'eslint.config.json'}))
+		.pipe(eslint.format());
+});
 
 gulp.task('watch', function(){
 	gulp.watch(config.paths.html, ['html']);
 	gulp.watch(config.paths.js, ['js']);
-})
+});
 
 
 gulp.task('default', ['html', 'js', 'css', 'open', 'watch']);
