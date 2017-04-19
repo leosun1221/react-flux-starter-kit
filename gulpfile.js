@@ -7,7 +7,7 @@ var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify'); // Transforms Reat JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat');  // Concatenates files
-var lint = require('gulp-concat');  // Concatenates files
+var lint = require('gulp-eslint');  // Lint JS files, including JSX
 
 var config = {
 	port: 9005,
