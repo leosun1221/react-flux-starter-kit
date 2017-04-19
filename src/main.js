@@ -1,6 +1,8 @@
 $ = jQuery = require('jquery');
 
-var App = console.log("dasdasdasdas");
+ tdasdadasest = 1;
+
+var App = console.log("11111");
 
 module.export = App;
 

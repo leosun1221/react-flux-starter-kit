@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 var gulp = require('gulp');
 var connect = require('gulp-connect'); // Runs a local dev server
@@ -38,13 +38,13 @@ gulp.task('open', ['connect'], function(){
 		.pipe(open({ uri: config.devBaseUrl + ":" + config.port + "/" }));
 });
 
-gulp.task('html', function(){
+gulp.task('html', function() {
 	gulp.src(config.paths.html)
 		.pipe(gulp.dest(config.paths.dist))
 		.pipe(connect.reload());
 });
 
-gulp.task('js', function(){
+gulp.task('js', function() {
 	browserify(config.paths.mainJs)
 		.transform(reactify)
 		.bundle()
@@ -60,10 +60,10 @@ gulp.task('css', function(){
 		.pipe(gulp.dest(config.paths.dist + '/css'));
 });
 
-gulp.task('lint', function(){
+gulp.task('lint', function() {
 	return gulp.src(config.paths.js)
-		.pipe(eslint({config: 'eslint.config.json'}))
-		.pipe(eslint.format());
+		.pipe(lint({configFile: 'eslint.config.json'}))
+		.pipe(lint.format());
 });
 
 gulp.task('watch', function(){
